@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 45px;
+    color: azure;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: azure;
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    color: azure;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    color: azure;
+}
+
+.card-background {
+    background-image: url(./assets/images/GIFs/rain-background.gif);
+    background-repeat: no-repeat;
+    max-width: 470px;
+    margin: 70px auto 0;
+    border-radius: 20px;
+    text-align: center;
+    padding: 40px 35px;
+    object-fit: contain;
+    border: 1px solid white;
+    background-size: cover;
+}
+
+
+body {
+    background-color: black;
+}
+
+input {
+    border: 0;
+    padding: 10px;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+    outline: none;
+}
+
+button {
+    background-color: transparent;
+    filter: invert(100%);
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    position: relative;
+}
+
+.search {
+    width: 100%;
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+#weather-icon {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+.col {
+    width: 100%;
+}
