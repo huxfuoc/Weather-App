@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <div class="card-background">
+    <div class="card-background" style="background-image: url(./assets/images/GIFs/cloudy-background.gif);">
         <div class="search">
-            <input type="text" placeholder="Nhập tên thành phố" spellcheck="false">
+            <input type="text" placeholder="Nhập tên thành phố" spellcheck="false" onkeyup="handleKeyPress(event)">
             <button><img src="./assets/images/Icons/search.png" alt="search-icon" width="30px"></button>
         </div>
         <div class="weather">
@@ -35,10 +35,13 @@
 
     <script>
         const apiKey = "358ebf40c88f0d3b6fc6106affec5967";
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=qui%20nhon";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-        async function checkWeather() {
-            const response = await fetch(apiUrl + "&appid=" + apiKey);
+        const searchBox = document.querySelector(".search input")
+        const searchBtn = document.querySelector(".search button")
+
+        async function checkWeather(city) {
+            const response = await fetch(apiUrl + city + "&appid=" + apiKey);
             var data = await response.json();
 
             console.log(data);
@@ -49,8 +52,16 @@
             document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
 
         }
-
-        checkWeather();
+        searchBtn.addEventListener("click", () => {
+            checkWeather(searchBox.value);
+        })
+        function handleKeyPress(event) {
+            // Kiểm tra nếu phím được ấn là Enter (mã ASCII 13)
+            if (event.key === "Enter") {
+                // Gọi tới hàm tìm kiếm
+                checkWeather(searchBox.value);
+            }
+        }
     </script>
 </body>
 
